@@ -1,0 +1,286 @@
+body {
+    background-color: #000000;
+    color: #fff;
+}
+
+.navbar {
+    height: 56px;          /* ALTURA FIJA */
+    min-height: 36px;
+}
+
+.navbar-brand {
+    padding: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    max-height: 100%;     /* NUNCA más alto que el navbar */
+    width: auto;
+}
+
+/* HERO CAROUSEL */
+#heroCarousel {
+    height: 100vh;
+    position: relative; /* 🔥 CLAVE ABSOLUTA */
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.788); /* 👈 0.5 a 0.7 ideal */
+    z-index: 1;
+    pointer-events: none;
+}
+
+#heroCarousel .carousel-inner,
+#heroCarousel .carousel-item {
+    height: 100vh;
+}
+
+/* Imagen full hero sin deformar */
+#heroCarousel img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;           /* 👈 CLAVE */
+    object-position: center 20%; /* sube un poco la imagen */
+}
+
+/* Overlay oscuro */
+#heroCarousel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Texto centrado */
+.hero-content {
+    position: absolute;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.hero-content h1 {
+    color: #ffc107;
+    text-shadow: 0 2px 8px rgba(0,0,0,.8);
+}
+
+.hero-content p {
+    text-shadow: 0 2px 6px rgba(0,0,0,.8);
+}
+
+/* Botones siempre arriba */
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 3;
+}
+
+/* Botón sí clickeable */
+.hero-content button {
+    pointer-events: auto;
+}
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+/* TESTIMONIOS */
+.testimonial {
+    background-color: #111;
+    border: 1px solid #ffc107;
+    color: #fff;
+    height: 100%;
+}
+
+/* SOCIAL FLOATING */
+.social-floating {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-floating a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+}
+
+.whatsapp { background: #25D366; }
+.instagram { background: #E1306C; }
+.facebook { background: #1877F2; }
+
+/* FOOTER */
+.footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+    color: #ffc107;
+}
+
+.carousel img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.sold-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.375rem;
+}
+
+.sold-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.sold-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffc107;
+    text-align: center;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.sold-text {
+    background: rgba(0, 0, 0, 0.7); /* 👈 transparencia */
+    padding: 10px 30px;
+    transform: rotate(-10deg);
+    border: 2px solid #ffc107;
+    color: #ffc107;
+}
+
+.sold-card:hover .sold-overlay {
+    opacity: 0.9;
+}
+
+.car-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    cursor: pointer;
+}
+
+.car-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* OVERLAY */
+.car-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.car-card:hover img {
+    transform: scale(1.08);
+}
+
+.car-card:hover .car-overlay {
+    opacity: 1;
+}
+
+.car-overlay h5 {
+    color: #ffc107;
+    margin-bottom: 6px;
+}
+
+.car-overlay p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffc107;
+}
+
+/* MOBILE: mostrar info siempre */
+@media (max-width: 768px) {
+    .car-overlay {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.55);
+    }
+}
+
+/* calificacion estrellas */
+.stars i {
+    color: #ffc107; /* amarillo Bootstrap / SALECAR */
+    font-size: 1.1rem;
+    margin: 0 1px;
+}
+
+/* modal */
+.modal-dark {
+    background: #111;
+    color: #fff;
+}
+
+.modal-dark .form-control {
+    background: #000;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+.modal-dark .form-control::placeholder {
+    color: #aaa;
+}
+
+/* ICONOS */
+.step-icon {
+    font-size: 3.5rem;
+    color: #ffc107; /* amarillo SALECAR */
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* QUIENES SOMOS */
+#quienes-somos p {
+    color: #ccc;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+#cotizar {
+  scroll-margin-top: 90px;
+}
+

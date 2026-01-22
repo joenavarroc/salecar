@@ -1,0 +1,189 @@
+body {
+    background: #000;
+    color: #fff;
+}
+
+.navbar {
+    height: 56px;          /* ALTURA FIJA */
+    min-height: 36px;
+}
+
+.navbar-brand {
+    padding: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    max-height: 100%;     /* NUNCA más alto que el navbar */
+    width: auto;
+}
+
+.car-card {
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform .3s;
+    height: 100%;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+.car-card img.main-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.thumbs {
+    display: flex;
+    gap: 4px;
+    padding: 6px;
+    background: #000;
+}
+
+.thumbs img {
+    width: 40px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.car-body {
+    padding: 15px;
+}
+
+.car-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.car-meta {
+    font-size: .85rem;
+    color: #ccc;
+    display: flex;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.price {
+    color: #ffc107;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.location {
+    font-size: .85rem;
+    color: #bbb;
+}
+
+.btn-info {
+    background: #ffc107;
+    border: none;
+    color: #000;
+    font-weight: 600;
+}
+
+.btn-info:hover {
+    background: #e0a800;
+}
+
+.pagination .page-link {
+    background: #111;
+    color: #ffc107;
+    border-color: #333;
+}
+
+.pagination .active .page-link {
+    background: #ffc107;
+    color: #000;
+}
+
+/* modal */
+
+.modal-dark {
+    background: #0b0b0b;
+    color: #fff;
+}
+
+.modal-dark .form-control {
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+}
+
+.modal-dark .form-control::placeholder {
+    color: #aaa;
+}
+
+.spec-box {
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+#modalThumbs img {
+    width: 60px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #333;
+}
+
+/* buscador */
+
+.filter-box {
+    background: #111;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #222;
+}
+
+.filter-box h5 {
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.filter-box label {
+    font-size: .85rem;
+    color: #bbb;
+    margin-bottom: 4px;
+}
+
+.filter-box .form-select,
+.filter-box .form-control {
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+}
+
+.filter-box .form-select:focus,
+.filter-box .form-control:focus {
+    border-color: #ffc107;
+    box-shadow: none;
+}
+
+/* modal */
+.modal-dark {
+    background: #111;
+    color: #fff;
+}
+
+.modal-dark .form-control {
+    background: #000;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+.modal-dark .form-control::placeholder {
+    color: #aaa;
+}

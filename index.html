@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SALECAR | Venta de Autos</title>
+    <link rel="icon" href="/assets/img/icono.png" type="img" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/index.html">
+            <img src="assets/img/logo.png" alt="Logo SALECAR" class="navbar-logo">
+        </a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto gap-2">
+                <a class="btn btn-outline-warning" href="#venta">Quiero Vender</a>
+                <li><a class="btn btn-outline-warning" href="comprar.html">Quiero Comprar</a></li>
+                <li>
+                    <a class="btn btn-warning" href="#cotizar">
+                    Cotizar
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link text-white" href="index.html#quienes-somos">
+                        Quiénes Somos
+                    </a>
+                </li>
+                <li><a class="nav-link text-white" href="#">Contáctenos</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+  <div class="hero-overlay"></div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/img/carrusel1.jpg" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/carrusel2.jpg" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/carrusel3.jpg" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/carrusel4.jpg" class="d-block w-100">
+    </div>
+  </div>
+
+  <div class="hero-content position-absolute top-50 start-50 translate-middle text-center">
+    <h1>Vendé o comprá tu auto fácil</h1>
+    <p>Rápido, seguro y al mejor precio</p>
+        <a href="#cotizar" class="btn btn-warning btn-lg">
+        Cotizar Ahora
+        </a>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+</div>
+
+<!-- CARRUSEL MAS BUSCADOS -->
+<section class="container my-5">
+    <h2 class="text-center text-warning mb-4">Mas buscados</h2>
+
+    <div id="ventaCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <!-- SLIDE 1 -->
+            <div class="carousel-item active">
+                <div class="row g-3">
+
+                    <div class="col-md-4">
+                        <div class="car-card">
+                            <img src="assets/img/auto1.jpg" alt="Auto 1">
+                            <div class="car-overlay">
+                                <h5>Toyota Corolla 2021</h5>
+                                <p>Automático · 45.000 km</p>
+                                <span class="price">$12.500.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="car-card">
+                            <img src="assets/img/auto2.jpg" alt="Auto 2">
+                            <div class="car-overlay">
+                                <h5>Volkswagen Golf</h5>
+                                <p>Manual · 60.000 km</p>
+                                <span class="price">$10.800.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="car-card">
+                            <img src="assets/img/auto3.jpg" alt="Auto 3">
+                            <div class="car-overlay">
+                                <h5>Ford Focus</h5>
+                                <p>Automático · 52.000 km</p>
+                                <span class="price">$11.300.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-item">
+                <div class="row g-3">
+
+                    <div class="col-md-4">
+                        <div class="car-card">
+                            <img src="assets/img/auto4.jpg" alt="Auto 4">
+                            <div class="car-overlay">
+                                <h5>Chevrolet Cruze</h5>
+                                <p>Manual · 48.000 km</p>
+                                <span class="price">$10.200.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="car-card">
+                            <img src="assets/img/auto5.jpg" alt="Auto 5">
+                            <div class="car-overlay">
+                                <h5>Peugeot 208</h5>
+                                <p>Automático · 30.000 km</p>
+                                <span class="price">$9.900.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="car-card">
+                            <img src="assets/img/auto6.jpg" alt="Auto 6">
+                            <div class="car-overlay">
+                                <h5>Renault Megane</h5>
+                                <p>Manual · 70.000 km</p>
+                                <span class="price">$8.700.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CONTROLES -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#ventaCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#ventaCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- CARRUSEL VENDIDOS -->
+<section class="container my-5">
+    <h2 class="text-center text-warning mb-4">Últimos Vendidos</h2>
+
+    <div id="vendidosCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <!-- SLIDE 1 -->
+            <div class="carousel-item active">
+                <div class="row g-3">
+
+                    <div class="col-md-4">
+                        <div class="sold-card">
+                            <img src="assets/img/auto7.jpg" alt="Vendido 1">
+                            <div class="sold-overlay">
+                                <span class="sold-text">VENDIDO</span>
+                                <small>Toyota Corolla 2021</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="sold-card">
+                            <img src="assets/img/auto8.jpg" alt="Vendido 2">
+                            <div class="sold-overlay">
+                                <span class="sold-text">VENDIDO</span>
+                                <small>Ford Focus 2020</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="sold-card">
+                            <img src="assets/img/auto9.jpg" alt="Vendido 3">
+                            <div class="sold-overlay">
+                                <span class="sold-text">VENDIDO</span>
+                                <small>Volkswagen Golf 2019</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-item">
+                <div class="row g-3">
+
+                    <div class="col-md-4">
+                        <div class="sold-card">
+                            <img src="assets/img/auto10.jpg" alt="Vendido 4">
+                            <div class="sold-overlay">
+                                <span class="sold-text">VENDIDO</span>
+                                <small>Chevrolet Cruze 2021</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="sold-card">
+                            <img src="assets/img/auto11.jpg" alt="Vendido 5">
+                            <div class="sold-overlay">
+                                <span class="sold-text">VENDIDO</span>
+                                <small>Peugeot 208 2022</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="sold-card">
+                            <img src="assets/img/auto12.jpg" alt="Vendido 6">
+                            <div class="sold-overlay">
+                                <span class="sold-text">VENDIDO</span>
+                                <small>Fiat Cronos 2023</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CONTROLES -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#vendidosCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#vendidosCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+</section>
+
+<!-- VENTA EN 3 PASOS -->
+<section id="venta" class="container my-5 text-center">
+
+    <h2 class="mb-4 fw-bold">¿Querés vender?</h2>
+    <p class="mb-5 text">
+        Vendé tu auto de forma simple, segura y sin vueltas
+    </p>
+
+    <div class="row g-4">
+
+        <!-- PASO 1 -->
+        <div class="col-md-4">
+            <i class="bi bi-cash-coin step-icon"></i>
+            <h5 class="fw-bold">1. Cotizar</h5>
+            <p>
+                Completá el formulario y tasamos el precio de tu auto
+                según el mercado actual.
+            </p>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="col-md-4">
+            <i class="bi bi-search step-icon"></i>
+            <h5 class="fw-bold">2. Visita</h5>
+            <p>
+                Coordinamos una visita para verificar el estado y
+                condiciones del vehículo.
+            </p>
+        </div>
+
+        <!-- PASO 3 -->
+        <div class="col-md-4">
+            <i class="bi bi-people step-icon"></i>
+            <h5 class="fw-bold">3. Te conectamos con el comprador</h5>
+            <p>
+                Nos encargamos del contacto, trámites y te aseguramos
+                una operación segura.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FORMULARIO COTIZACIÓN -->
+<section id="cotizar" class="container my-5">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <div class="card modal-dark p-4">
+                <h4 class="text-warning text-center mb-4">
+                    Solicitar Cotización
+                </h4>
+
+                    <form
+                    action="https://formsubmit.co/josephn651@gmail.com"
+                    method="POST"
+                    enctype="multipart/form-data"
+                    class="row g-3"
+                    >
+                    <div class="col-md-6">
+                        <label class="form-label">Marca *</label>
+                        <input type="text" class="form-control" name="marca" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Modelo *</label>
+                        <input type="text" class="form-control" name="modelo" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Versión *</label>
+                        <input type="text" class="form-control" name="version" required>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Año *</label>
+                        <input type="number" class="form-control" name="anio" required>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Kilómetros *</label>
+                        <input type="number" class="form-control" name="kilometros" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Nombre *</label>
+                        <input type="text" class="form-control" name="nombre" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Apellido *</label>
+                        <input type="text" class="form-control" name="apellido" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Email *</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Teléfono *</label>
+                        <input type="tel" class="form-control" name="telefono" required>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Descripción</label>
+                        <textarea class="form-control" name="descripcion" rows="3"></textarea>
+
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Foto del vehículo (opcional)</label>
+                        <input type="file" class="form-control" name="foto">
+
+                    </div>
+
+                              <!-- TERMINOS -->
+                    <div class="col-12">
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" required>
+                        <label class="form-check-label small">
+                            Al hacer click en solicitar cotización está aceptando
+                            los términos y condiciones
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-warning w-100 fw-bold">
+                            Quiero vender mi auto
+                        </button>
+                    </div>
+
+                    <input type="hidden" name="_subject" value="Nueva solicitud de cotización">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="gracias.html">
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section id="quienes-somos" class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 text-center">
+
+            <h2 class="text-warning fw-bold mb-4">Quiénes Somos</h2>
+
+            <p class="lead">
+                Somos una <strong>empresa 100% online</strong> especializada en la
+                <strong>venta de autos usados</strong>, con más de
+                <strong>7 años de experiencia</strong> conectando compradores y vendedores
+                de manera simple, segura y transparente.
+            </p>
+
+            <p>
+                En <strong>SALECAR</strong> trabajamos para que vender o comprar un vehículo
+                no sea una pérdida de tiempo ni una preocupación.
+                Analizamos cada unidad, tasamos según el valor real de mercado
+                y acompañamos todo el proceso para que la operación sea clara,
+                rápida y sin complicaciones.
+            </p>
+
+            <p>
+                Nuestro objetivo es <strong>facilitar la transacción</strong>,
+                brindando asesoramiento personalizado, verificación del vehículo
+                y contacto directo con compradores reales,
+                cuidando siempre los intereses de ambas partes.
+            </p>
+
+            <p class="fw-semibold">
+                Confianza, transparencia y resultados reales.<br>
+                Eso es lo que nos eligen nuestros clientes.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="container my-5">
+    <h2 class="text-center text-warning mb-4">Testimonios</h2>
+    <div class="row g-4">
+        <div class="col-md-4 d-flex">
+            <div class="card testimonial w-100">
+                <div class="card-body d-flex flex-column">
+                    <p class="flex-grow-1">
+                        "Vendí mi auto en 24hs, excelente atención."
+                    </p>
+                    <div class="stars mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <h6 class="mt-3">- Juan Pérez</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex">
+            <div class="card testimonial w-100">
+                <div class="card-body d-flex flex-column">
+                    <p class="flex-grow-1">
+                        "Me pagaron al instante, súper recomendable."
+                    </p>
+                    <div class="stars mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <h6 class="mt-3">- María Gómez</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex">
+            <div class="card testimonial w-100">
+                <div class="card-body d-flex flex-column">
+                    <p class="flex-grow-1">
+                        "Proceso claro y sin vueltas."
+                    </p>
+                    <div class="stars mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <h6 class="mt-3">- Carlos López</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BURBUJAS -->
+<div class="social-floating">
+    <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 SALECAR - Todos los derechos reservados</p>
+    Developed by <strong>Joe Navarro</strong> | Design & Technology by <em> Big Bang Technology</em>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
