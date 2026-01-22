@@ -165,7 +165,7 @@ Descripción:
 ${descripcion}`;
 
   window.open(
-    "https://wa.me/5491123193091?text=" + encodeURIComponent(mensaje),
+    "https://wa.me/5491165510412?text=" + encodeURIComponent(mensaje),
     "_blank"
   );
 }
