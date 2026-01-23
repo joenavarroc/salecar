@@ -309,6 +309,15 @@ body {
     .car-card, .sold-card {
         margin-bottom: 25px; 
     }
+    /* Quita el filtro gris de Bootstrap para que las fotos brillen */
+    .carousel-item img {
+        filter: brightness(1) !important;
+    }
+    
+    /* Evita que el carrusel corte las imágenes que ahora van una debajo de otra en móvil */
+    .carousel-inner {
+        overflow: visible !important;
+    }
 }
 
 /* calificacion estrellas */
@@ -353,15 +362,6 @@ body {
   scroll-margin-top: 90px;
 }
 
-/* Quita el filtro gris de Bootstrap para que las fotos brillen */
-.carousel-item img {
-    filter: brightness(1) !important;
-}
-
-/* Evita que el carrusel corte las imágenes que ahora van una debajo de otra en móvil */
-.carousel-inner {
-    overflow: visible !important;
-}
 
 /* Asegura que el cartel de vendido no oscurezca demasiado la imagen */
 .sold-card img {
