@@ -187,3 +187,78 @@ body {
 .modal-dark .form-control::placeholder {
     color: #aaa;
 }
+
+/* ==========================================
+   AJUSTES RESPONSIVE (MÓVIL)
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* 1. Navbar: Quitamos altura fija para que se adapte al contenido */
+    .navbar {
+        height: auto; 
+        padding: 10px 0;
+    }
+
+    .navbar-brand {
+        height: 50px; /* Logo más pequeño en móvil */
+    }
+
+    .navbar-logo {
+        height: 40px;
+    }
+
+    /* 2. Filtros: Mejoramos el espaciado para que no ocupe tanto alto */
+    .filter-box {
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    /* 3. Modal: Ajustamos la ficha técnica (spec-box) */
+    .spec-box {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 5px;
+    }
+
+    /* 4. Imágenes del Modal: Evitar que sean gigantes */
+    #modalMainImg {
+        height: 250px;
+        object-fit: cover;
+    }
+
+    /* 5. Títulos: Achicamos el tamaño de fuente para celulares */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+
+    /* 6. Espaciado superior: Ajuste para que el título no quede bajo el navbar fijo */
+    .pt-5 {
+        padding-top: 4rem !important;
+    }
+}
+
+/* ==========================================
+   AJUSTES DE GRIDS (Tarjetas de autos)
+   ========================================== */
+
+/* Asegura que las imágenes de las tarjetas siempre mantengan proporción */
+.car-card img.main-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Evita que los botones del navbar se peguen en móvil */
+.navbar-nav .btn {
+    margin-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+    .navbar-nav .btn {
+        margin-bottom: 0;
+    }
+}
+
