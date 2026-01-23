@@ -90,21 +90,42 @@ body {
 /* Mobile */
 /* Ajustes para Celulares (Pantallas menores a 768px) */
 @media (max-width: 768px) {
-    /* Permitir que las 3 imágenes se vean una debajo de otra sin cortarse */
-    #ventaCarousel .carousel-inner, 
-    #vendidosCarousel .carousel-inner {
-        overflow: visible !important;
+    /* Achicar el texto del Hero para que no tape toda la pantalla */
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Ajustar el alto del carrusel en celulares */
+    #heroCarousel, .carousel-item img {
+        height: 60vh; /* Altura más cómoda para móviles */
+        object-fit: cover;
     }
     
-    /* Asegurar que cada tarjeta tenga aire entre sí en móvil */
-    .car-card, .sold-card {
-        margin-bottom: 20px;
+    /* Navbar: que el logo no sea gigante en móvil */
+    .navbar-logo {
+        height: 35px;
     }
-    
-    /* Opcional: Si quieres que el slide no sea tan largo, 
-       ajusta la altura de las imágenes solo en móvil */
-    .car-card img, .sold-card img {
-        height: 180px;
+
+    /* Ajustar padding de las secciones */
+    section {
+        padding: 20px 10px;
+    }
+
+        /* Alineación perfecta del botón y el logo */
+    .navbar-brand, .navbar-toggler {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /* Evita que el menú desplegable empuje el contenido hacia afuera de forma desprolija */
+    .navbar-collapse {
+        background-color: #000; /* Fondo negro sólido para el menú abierto */
+        padding: 15px;
+        border-top: 1px solid #333; /* Separación sutil */
+        margin-top: 5px;
     }
 }
 
@@ -303,3 +324,4 @@ body {
 #cotizar {
   scroll-margin-top: 90px;
 }
+
