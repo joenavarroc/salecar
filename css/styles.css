@@ -222,8 +222,9 @@ body {
     opacity: 0.9;
 }
 
+/* VENDIDOS: Asegura que el sold-card también tenga position: relative */
 .sold-card {
-    position: relative; /* 👈 Esto fija el cartel dentro de la foto */
+    position: relative; 
     overflow: hidden;
     border-radius: 0.375rem;
 }
@@ -236,11 +237,17 @@ body {
     transition: transform 0.4s ease;
 }
 
-/* OVERLAY */
+.car-card {
+    position: relative; /* 👈 CRÍTICO: El padre debe ser relativo */
+    overflow: hidden;
+    border-radius: 0.375rem;
+    cursor: pointer;
+}
+/* OVERLAY de 'Más Buscados' */
 .car-overlay {
-    position: absolute;
+    position: absolute; /* 👈 Se posiciona dentro de .car-card */
     inset: 0;
-    background: rgba(0, 0, 0, 0.75);
+    /* ... resto de estilos de color y transición ... */
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -248,7 +255,7 @@ body {
     align-items: center;
     text-align: center;
     padding: 15px;
-    opacity: 0;
+    opacity: 0; /* Por defecto invisible en PC */
     transition: opacity 0.4s ease;
 }
 
@@ -278,23 +285,28 @@ body {
 
 /* MOBILE: mostrar info siempre */
 @media (max-width: 768px) {
-    /* MÁS BUSCADOS: Gradiente solo abajo para que la foto se vea clara */
+ /* MÁS BUSCADOS: Mostrar info siempre, con gradiente abajo */
     .car-overlay {
-        opacity: 1;
+        opacity: 1; /* Siempre visible en móvil */
         background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 70%);
-        justify-content: flex-end; 
+        justify-content: flex-end; /* Texto abajo */
         padding-bottom: 15px;
     }
-
-    /* VENDIDOS: Capa oscura uniforme pero suave (ajusta el 0.3 a tu gusto) */
+    
+    /* VENDIDOS: Capa oscura uniforme suave, siempre visible */
     .sold-overlay {
-        opacity: 1;
-        background: rgba(0, 0, 0, 0.35) !important; /* Capa suave sobre toda la foto */
+        opacity: 1 !important; /* Siempre visible en móvil */
+        background: rgba(0, 0, 0, 0.4) !important; /* Capa suave sobre toda la foto */
     }
 
     .car-card img, 
     .sold-card img {
         height: 200px;
+    }
+
+        /* Espaciado entre tarjetas en vertical */
+    .car-card, .sold-card {
+        margin-bottom: 25px; 
     }
 }
 
