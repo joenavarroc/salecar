@@ -97,6 +97,10 @@ body {
     .hero-content p {
         font-size: 1rem;
     }
+    
+    .car-card, .sold-card {
+        margin-bottom: 25px; /* Separa los autos verticalmente */
+    }
 
     /* Ajustar el alto del carrusel en celulares */
     #heroCarousel, .carousel-item img {
@@ -274,10 +278,20 @@ body {
 
 /* MOBILE: mostrar info siempre */
 @media (max-width: 768px) {
+    /* MÁS BUSCADOS: Gradiente solo abajo para que la foto se vea clara */
     .car-overlay {
         opacity: 1;
-        background: rgba(0, 0, 0, 0.55);
+        background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 70%);
+        justify-content: flex-end; 
+        padding-bottom: 15px;
     }
+
+    /* VENDIDOS: Capa oscura uniforme pero suave (ajusta el 0.3 a tu gusto) */
+    .sold-overlay {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.35) !important; /* Capa suave sobre toda la foto */
+    }
+
     .car-card img, 
     .sold-card img {
         height: 200px;
@@ -326,3 +340,17 @@ body {
   scroll-margin-top: 90px;
 }
 
+/* Quita el filtro gris de Bootstrap para que las fotos brillen */
+.carousel-item img {
+    filter: brightness(1) !important;
+}
+
+/* Evita que el carrusel corte las imágenes que ahora van una debajo de otra en móvil */
+.carousel-inner {
+    overflow: visible !important;
+}
+
+/* Asegura que el cartel de vendido no oscurezca demasiado la imagen */
+.sold-card img {
+    filter: grayscale(20%); /* Opcional: un toque de gris para reforzar que se vendió */
+}
