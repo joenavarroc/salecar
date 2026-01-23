@@ -247,7 +247,7 @@ body {
 .car-overlay {
     position: absolute; /* 👈 Se posiciona dentro de .car-card */
     inset: 0;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.15);
     color: #fff;
     display: flex;
     flex-direction: column;
