@@ -1,11 +1,12 @@
 body {
     background-color: #000000;
     color: #fff;
+    padding-top: 70px;
 }
 
+/* Ajuste de altura del Navbar en móviles */
 .navbar {
-    height: 56px;          /* ALTURA FIJA */
-    min-height: 36px;
+    min-height: 70px; /* Asegura un alto mínimo */
 }
 
 .navbar-brand {
@@ -16,16 +17,12 @@ body {
 }
 
 .navbar-logo {
-    max-height: 100%;     /* NUNCA más alto que el navbar */
+    height: 45px; /* Altura fija para PC */
     width: auto;
+    transition: 0.3s;
 }
 
 /* HERO CAROUSEL */
-#heroCarousel {
-    height: 100vh;
-    position: relative; /* 🔥 CLAVE ABSOLUTA */
-}
-
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -34,19 +31,26 @@ body {
     pointer-events: none;
 }
 
+/* HERO CAROUSEL */
+#heroCarousel {
+    /* En lugar de 100vh, restamos el alto del navbar (70px) */
+    height: calc(100vh - 70px); 
+    position: relative;
+    overflow: hidden; /* Evita que las imágenes se desborden */
+}
+
 #heroCarousel .carousel-inner,
 #heroCarousel .carousel-item {
-    height: 100vh;
+    /* Ajustamos también los contenedores internos */
+    height: calc(100vh - 70px);
 }
 
-/* Imagen full hero sin deformar */
 #heroCarousel img {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;           /* 👈 CLAVE */
-    object-position: center 20%; /* sube un poco la imagen */
+    height: 100%; /* Que use el alto del contenedor padre */
+    object-fit: cover;
+    object-position: center;
 }
-
 /* Overlay oscuro */
 #heroCarousel::before {
     content: "";
@@ -84,15 +88,61 @@ body {
     pointer-events: auto;
 }
 /* Mobile */
+/* Ajustes para Celulares (Pantallas menores a 768px) */
 @media (max-width: 768px) {
+    /* Achicar el texto del Hero para que no tape toda la pantalla */
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
-
     .hero-content p {
         font-size: 1rem;
     }
+
+    /* Ajustar el alto del carrusel en celulares */
+    #heroCarousel, .carousel-item img {
+        height: 60vh; /* Altura más cómoda para móviles */
+        object-fit: cover;
+    }
+
+    /* En celulares, ocultamos los autos 2 y 3 de cada slide del carrusel 
+       para que solo se vea uno por vez y no se amontonen */
+    #ventaCarousel .col-md-4:not(:first-child),
+    #vendidosCarousel .col-md-4:not(:first-child) {
+        display: none;
+    }
+    
+    /* Navbar: que el logo no sea gigante en móvil */
+    .navbar-logo {
+        height: 35px;
+    }
+
+    /* Ajustar padding de las secciones */
+    section {
+        padding: 20px 10px;
+    }
+
+        /* Alineación perfecta del botón y el logo */
+    .navbar-brand, .navbar-toggler {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /* Evita que el menú desplegable empuje el contenido hacia afuera de forma desprolija */
+    .navbar-collapse {
+        background-color: #000; /* Fondo negro sólido para el menú abierto */
+        padding: 15px;
+        border-top: 1px solid #333; /* Separación sutil */
+        margin-top: 5px;
+    }
 }
+
+/* Estilo general para asegurar que las imágenes no se deformen */
+.car-card img, .sold-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
 
 /* TESTIMONIOS */
 .testimonial {
@@ -283,4 +333,3 @@ body {
 #cotizar {
   scroll-margin-top: 90px;
 }
-
