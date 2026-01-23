@@ -1,7 +1,14 @@
 /* =========================
+   CONFIGURACIÓN PRINCIPAL (Edita aquí tus datos)
+========================= */
+const nroVendedor = "5491123193091";            // <--- AQUÍ EDITAS TU WHATSAPP
+const mailVendedor = "josephn651@gmail.com";    // <--- AQUÍ EDITAS TU MAIL
+// ============================================================
+
+
+/* =========================
    DATA
 ========================= */
-
 const autos = [
     { modelo: "Citroen Berlingo 1.6 HDI", year: 2020, km: "175000", precio: "$22.300.000", img: "auto1.jpg" },
     { modelo: "Toyota Hilux SW4 2.8 SRX", year: 2018, km: "112000", precio: "U$S 44.000", img: "auto2.jpg" },
@@ -11,7 +18,6 @@ const autos = [
     { modelo: "Peugeot 208", year: 2022, km: "30000", precio: "$16.900.000", img: "auto6.jpg" },
     { modelo: "Renault Megane", year: 2019, km: "85000", precio: "$14.500.000", img: "auto7.jpg" },
     { modelo: "Fiat Cronos", year: 2023, km: "15000", precio: "$17.800.000", img: "auto8.jpg" },
-
     { modelo: "Toyota Corolla", year: 2021, km: "45000", precio: "$21.900.000", img: "auto9.jpg" },
     { modelo: "Nissan Frontier", year: 2020, km: "70000", precio: "$26.500.000", img: "auto10.jpg" },
     { modelo: "Jeep Compass", year: 2019, km: "65000", precio: "$23.000.000", img: "auto11.jpg" },
@@ -20,7 +26,6 @@ const autos = [
     { modelo: "Audi A3", year: 2019, km: "55000", precio: "U$S 29.000", img: "auto14.jpg" },
     { modelo: "Mercedes GLA", year: 2020, km: "48000", precio: "U$S 38.000", img: "auto15.jpg" },
     { modelo: "VW Amarok", year: 2022, km: "25000", precio: "U$S 42.000", img: "auto16.jpg" },
-
     { modelo: "Toyota Etios", year: 2020, km: "80.000", precio: "$13.200.000", img: "auto17.jpg" },
     { modelo: "Ford Ranger", year: 2021, km: "50.000", precio: "U$S 41.000", img: "auto18.jpg" }, 
     { modelo: "Chevrolet Onix", year: 2022, km: "20.000", precio: "$15.900.000", img: "auto19.jpg" }, 
@@ -28,21 +33,16 @@ const autos = [
 ];
 
 /* =========================
-   STATE
+   STATE & RENDERING
 ========================= */
-
 const autosPorPagina = 6;
 let paginaActual = 1;
 let autosFiltrados = [...autos];
 
-/* =========================
-   RENDER AUTOS
-========================= */
-
 function renderAutos() {
     const container = document.getElementById("autosContainer");
+    if(!container) return;
     container.innerHTML = "";
-
     const inicio = (paginaActual - 1) * autosPorPagina;
     const visibles = autosFiltrados.slice(inicio, inicio + autosPorPagina);
 
@@ -53,36 +53,22 @@ function renderAutos() {
                 <img src="assets/img/${auto.img}" class="main-img" alt="${auto.modelo}">
                 <div class="car-body">
                     <div class="car-title">${auto.modelo}</div>
-                    <div class="car-meta">
-                        <span>${auto.year}</span>
-                        <span>${auto.km} km</span>
-                    </div>
+                    <div class="car-meta"><span>${auto.year}</span> | <span>${auto.km} km</span></div>
                     <div class="price">${auto.precio}</div>
-
-                    <button class="btn btn-warning w-100 mt-2"
-                        onclick="abrirModal(autosFiltrados[${inicio + index}])">
-                        Más Info
-                    </button>
+                    <button class="btn btn-warning w-100 mt-2" onclick="abrirModal(autosFiltrados[${inicio + index}])">Más Info</button>
                 </div>
             </div>
         </div>`;
     });
 }
 
-/* =========================
-   PAGINACIÓN
-========================= */
-
 function renderPagination() {
     const total = Math.ceil(autosFiltrados.length / autosPorPagina);
     const pag = document.getElementById("pagination");
+    if(!pag) return;
     pag.innerHTML = "";
-
     for (let i = 1; i <= total; i++) {
-        pag.innerHTML += `
-        <li class="page-item ${i === paginaActual ? 'active' : ''}">
-            <button class="page-link" onclick="cambiarPagina(${i})">${i}</button>
-        </li>`;
+        pag.innerHTML += `<li class="page-item ${i === paginaActual ? 'active' : ''}"><button class="page-link" onclick="cambiarPagina(${i})">${i}</button></li>`;
     }
 }
 
@@ -91,10 +77,6 @@ function cambiarPagina(p) {
     renderAutos();
     renderPagination();
 }
-
-/* =========================
-   FILTROS
-========================= */
 
 function aplicarFiltros() {
     const marca = document.getElementById("filtroMarca").value.toLowerCase();
@@ -110,7 +92,6 @@ function aplicarFiltros() {
             (!texto || auto.modelo.toLowerCase().includes(texto))
         );
     });
-
     paginaActual = 1;
     renderAutos();
     renderPagination();
@@ -119,9 +100,10 @@ function aplicarFiltros() {
 /* =========================
    MODAL
 ========================= */
-
 function abrirModal(auto) {
     document.getElementById("autoModalTitle").innerText = auto.modelo;
+    document.getElementById("modalMarca").innerText = "Vehículo:"; 
+    document.getElementById("modalModelo").innerText = auto.modelo;
     document.getElementById("modalMainImg").src = `assets/img/${auto.img}`;
     document.getElementById("modalPrecio").innerText = auto.precio;
     document.getElementById("modalAnio").innerText = auto.year;
@@ -130,42 +112,48 @@ function abrirModal(auto) {
     new bootstrap.Modal(document.getElementById("autoModal")).show();
 }
 
-/* =========================
-   INIT
-========================= */
-
 renderAutos();
 renderPagination();
-function enviarWhatsApp() {
-  const marca = document.querySelector('[name="marca"]').value;
-  const modelo = document.querySelector('[name="modelo"]').value;
-  const version = document.querySelector('[name="version"]').value;
-  const anio = document.querySelector('[name="anio"]').value;
-  const km = document.querySelector('[name="kilometros"]').value;
-  const nombre = document.querySelector('[name="nombre"]').value;
-  const apellido = document.querySelector('[name="apellido"]').value;
-  const email = document.querySelector('[name="email"]').value;
-  const telefono = document.querySelector('[name="telefono"]').value;
-  const descripcion = document.querySelector('[name="descripcion"]').value;
 
-  const mensaje =
-`Hola, quiero vender mi auto 🚗
+/* =========================
+   ENVÍO DE FORMULARIO (CORREGIDO)
+========================= */
+document.getElementById('formVehiculo').addEventListener('submit', function(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
 
-Marca: ${marca}
-Modelo: ${modelo}
-Versión: ${version}
-Año: ${anio}
-Kilómetros: ${km}
+    const nombre = document.getElementById('f_nombre').value;
+    const apellido = document.getElementById('f_apellido').value;
+    const email = document.getElementById('f_email').value;
+    const mensaje = document.getElementById('f_mensaje').value;
 
-Nombre: ${nombre} ${apellido}
-Email: ${email}
-Teléfono: ${telefono}
+    const marca = document.getElementById('modalMarca').innerText.trim();
+    const modelo = document.getElementById('modalModelo').innerText.trim();
+    const anio = document.getElementById('modalAnio').innerText.trim();
 
-Descripción:
-${descripcion}`;
+    // 1. Configurar WhatsApp detallado
+    const textoWA = `Hola! Soy ${nombre} ${apellido}. Me interesa el ${marca} ${modelo} año ${anio}. Mi email: ${email}. Consulta: ${mensaje}`;
+    const urlWA = "https://wa.me/" + nroVendedor + "?text=" + encodeURIComponent(textoWA);
 
-  window.open(
-    "https://wa.me/5491165510412?text=" + encodeURIComponent(mensaje),
-    "_blank"
-  );
-}
+    // 2. Preparar el Mail
+    const formData = new FormData(this);
+    formData.append("Auto_Interes", `${marca} ${modelo} ${anio}`);
+
+    // 3. ENVIAR MAIL (URL CORREGIDA CON /ajax/)
+    fetch("https://formsubmit.co" + mailVendedor, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        // Al usar /ajax/, esto se ejecuta correctamente
+        window.open(urlWA, '_blank');
+        window.location.href = "gracias.html";
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        // Si falla el mail, igual abrimos WhatsApp y redirigimos para no perder el cliente
+        window.open(urlWA, '_blank');
+        window.location.href = "gracias.html";
+    });
+});
