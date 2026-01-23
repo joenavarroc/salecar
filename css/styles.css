@@ -247,7 +247,7 @@ body {
 .car-overlay {
     position: absolute; /* 👈 Se posiciona dentro de .car-card */
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.75);
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -288,7 +288,7 @@ body {
  /* MÁS BUSCADOS: Mostrar info siempre, con gradiente abajo */
     .car-overlay {
         opacity: 1; /* Siempre visible en móvil */
-        background: rgba(0, 0, 0, 0.45); 
+        background: rgba(0, 0, 0, 0.95); 
         justify-content: center; 
         padding: 15px;
         padding-bottom: 15px;
