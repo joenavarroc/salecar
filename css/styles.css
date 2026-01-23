@@ -198,7 +198,7 @@ body {
 .sold-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.0); /* 👈 Bajamos de 0.65 a 0.4 para que no sea tan oscura */
+    background: rgba(0, 0, 0, 0.4); /* 👈 Bajamos de 0.65 a 0.4 para que no sea tan oscura */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -247,7 +247,7 @@ body {
 .car-overlay {
     position: absolute; /* 👈 Se posiciona dentro de .car-card */
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.45);
     color: #fff;
     display: flex;
     flex-direction: column;
